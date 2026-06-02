@@ -21,6 +21,7 @@ public class EventServiceImpl implements EventService {
 
 
 	@Override
+	@Transactional
 	public Event createEvent(Event eventrequest) {
 		
 		
