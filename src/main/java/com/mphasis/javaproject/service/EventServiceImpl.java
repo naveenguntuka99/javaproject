@@ -27,6 +27,9 @@ public class EventServiceImpl implements EventService {
 		Optional<Event> existingEvent = eventRepo.findById(eventrequest.getEventId());
 		
 		// Here we are return the existing eventid deatils if we get multiple request with same id
+		
+		//Idempotency verification and return existing eventid deatils
+		
 		if(existingEvent.isPresent()) {
 	        return existingEvent.get();
 	    }
